@@ -6,7 +6,6 @@ require "db.php";
  <!DOCTYPE html>
  <html lang="en">
  <head>
-     <script>setTimeout("window.location.reload()",1000);</script>
  	<meta charset="UTF-8">
  	<title>Flappy Stars</title>
  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,7 +29,7 @@ require "db.php";
   transition: all .5s ease;
 }
 .col1{
-    color:purple;
+    color:#FF47C5;
 }
  		</style>
  </head>
@@ -45,7 +44,7 @@ require "db.php";
 $login=$_SESSION['logged_user']->login;
 $servername = "localhost";
 $username = "id11922656_root";
-$password = "Zinkovw2";
+$password = "";
 $dbname = "id11922656_users";
 
 // Create connection
@@ -66,12 +65,10 @@ if (mysqli_num_rows($result) > 0) {
         }else{
              echo '<span style="color:purple;font-size:20px;">' . $row['access_level'] . '</span>';
         }
-      
     }
 } else {
     echo "0 results";
 }
-
 mysqli_close($conn);
 ?></span>
     </div>
@@ -79,16 +76,13 @@ mysqli_close($conn);
         <nav>
     <ul>
       <li><a href="/settings.php" style="color:white">Настройки</a></li>
-      <li style="color:white"><a href="https://happystarsschool.000webhostapp.com/" style="color:white">О нас</a></li>
       <li><a class="logout" href="/logout.php" style="color:white">Выйти</a></li>
-      
+      <li style="color:white"><a href="#" style="color:white">О нас</a></li>
     </ul>
   </nav>
     </div>
   </div>
 </div>
-
- 	
  		<div class="bg">
  		<h1> Ваш логин:<span style="color:green;
 	text-align: center;"><?php echo $_SESSION['logged_user']->login; ?></span> 		    </h1>
@@ -115,9 +109,10 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
  		    </span>
+ 		    <br>
  		</div>
  		</div>
- 	<div class="score">
+ 	<div class="score" style="padding:20px;">
 		<h1>Рейтинг</h1>
 	<hr style="width:50%;margin-top: -10px;"></hr><br>
 	<table >
@@ -128,7 +123,7 @@ mysqli_close($conn);
 <?php
 $servername = "localhost";
 $username = "id11922656_root";
-$password = "Zinkovw2";
+$password = "";
 $dbname = "id11922656_users";
 
 // Create connection
@@ -155,12 +150,10 @@ if (mysqli_num_rows($result) > 0) {
 			     <td class="col1">' . $row['score'] . '</td>
 			 </tr>';
         }
-     
     }
 } else {
     echo "0 results";
 }
-
 mysqli_close($conn);
 ?>
 </table>
@@ -177,17 +170,16 @@ mysqli_close($conn);
     <ul>
       <li><a href="/login.php" style="color:white">Войти</a></li>
       <li><a href="/register.php" style="color:white">Зарегистрироваться</a></li>
-      <li><a class="logout" href="https://happystarsschool.000webhostapp.com/" style="color:white">О нас</a></li>
+      <li><a class="logout" href="#" style="color:white">О нас</a></li>
     </ul>
   </nav>
     </div>
   </div>
 </div>
-
  	<div class="bg">
  		<h1>Об игре</h1>
  		<hr style="width:50%;margin-top: -10px;"></hr>
- 		Играй с друзьями, зарабатывай деньги, бей рекорды!
+ 		Играй с друзьями из инстаграма, зарабатывай деньги, бей рекорды!
  		</div>
  		<div class="score">
 		<h1>Рейтинг</h1>
@@ -195,13 +187,6 @@ mysqli_close($conn);
 <p>Войдите для просмотра</p>
 </table>
  	</div>
- 		
-
     <?php endif; ?>
-
-
- 	
-
- 	
  </body>
  </html>

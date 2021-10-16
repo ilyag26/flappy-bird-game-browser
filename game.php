@@ -8,7 +8,7 @@ require "db.php";
 $login=$_SESSION['logged_user']->login;
 $servername = "localhost";
 $username = "id11922656_root";
-$password = "Zinkovw2";
+$password = "";
 $dbname = "id11922656_users";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
